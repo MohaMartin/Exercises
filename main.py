@@ -1,5 +1,4 @@
 import numpy as np
-import numpy.linalg
 
 
 # 1. exercise:
@@ -68,7 +67,7 @@ def rowwise_norm(input_list: list) -> np.array:
     input_np_array = np.array(input_list)
 
     # calculate the row-wise norm values of the input array
-    norm_values = numpy.linalg.norm(input_np_array, axis=1)
+    norm_values = np.linalg.norm(input_np_array, axis=1)
 
     return norm_values
 

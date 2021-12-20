@@ -82,10 +82,10 @@ def matrices_to_diagonal(matrices: list) -> np.array:
     # Calculate size of output block matrix and initialize
     matrices = np.array(matrices)
     print(matrices)
-    M_size = 0
+    result_size = 0
     for m in matrices:
-        M_size += len(m)
-    block_matrix = np.zeros([M_size, M_size])
+        result_size += len(m)
+    block_matrix = np.zeros([result_size, result_size])
 
     # copying cell values from input matrices to output matrix
     cell_to_start = 0

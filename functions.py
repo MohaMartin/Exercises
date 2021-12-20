@@ -37,10 +37,14 @@ def queen_attack(n: int, r_q: int, c_q: int, obstacles: list) -> int:
     # moving in the direction of vectors until reaching the end of the board
     for v in vectors:
         temp_pos = np.array(start_cell)
-        while max(abs(temp_pos)) < n:
+        while max(abs(temp_pos)) < n and min(abs(temp_pos)) > 1:
+            # moving in the direction of vector
             temp_pos = np.add(temp_pos, v)
             # if the cell is not in obstacles add to possible cells
-            steps.append(temp_pos)
+            if any(np.array_equal(x, temp_pos) for x in obstacles):
+                break
+            else:
+                steps.append(temp_pos)
 
     # return the number of possible cells
     return len(steps)
